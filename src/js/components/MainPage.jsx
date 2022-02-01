@@ -1,16 +1,14 @@
 import codingImg from '@img/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {
-  startSetSettings
-} from '../actions'
+import { startGetSettings } from '../actions'
 
 const MainPage = (props) => {
   const dispatch = useDispatch()
   const { fetched, title = '' } = useSelector(state => state.settings)
   useEffect(() => {
     if (!fetched) {
-      dispatch(startSetSettings())
+      dispatch(startGetSettings())
     }
   }, [fetched])
 
